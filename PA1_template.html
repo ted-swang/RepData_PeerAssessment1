@@ -169,6 +169,9 @@ timeSeries1 + geom_line()</code></pre>
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
+<p>The presence of missing days may introduce bias into some calculations or summaries of the data. We compute the number of missing values in our data frame.</p>
+<pre class="r"><code>sum(is.na(activity$steps))</code></pre>
+<pre><code>## [1] 2304</code></pre>
 <p>We replace missing values with the average number of steps for that time interval.</p>
 <pre class="r"><code>imputed_activity &lt;- activity %&gt;%
         group_by(interval) %&gt;%

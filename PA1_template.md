@@ -87,6 +87,17 @@ with(activity_by_interval, interval[which.max(steps)])
 
 ## Imputing missing values
 
+The presence of missing days may introduce bias into some calculations or summaries of the data. We compute the number of missing values in our data frame.
+
+
+```r
+sum(is.na(activity$steps))
+```
+
+```
+## [1] 2304
+```
+
 We replace missing values with the average number of steps for that time interval.
 
 
